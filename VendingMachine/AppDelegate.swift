@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  VendingMachine
 //
-//  Created by Pasan Premaratne on 1/19/16.
-//  Copyright © 2016 Treehouse. All rights reserved.
+//  Created by Pedro Ruiz on 5/12/16.
+//  Copyright © 2016 Pedro Ruiz. All rights reserved.
 //
 
 import UIKit

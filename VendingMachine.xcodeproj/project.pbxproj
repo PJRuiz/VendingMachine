@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95D9C6D51CE6F502005DCD11 /* VendingMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D9C6D41CE6F502005DCD11 /* VendingMachine.swift */; };
 		97EC979F1C4E80860081754A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EC979E1C4E80860081754A /* AppDelegate.swift */; };
 		97EC97A11C4E80860081754A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EC97A01C4E80860081754A /* ViewController.swift */; };
 		97EC97A41C4E80860081754A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97EC97A21C4E80860081754A /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		95D9C6D41CE6F502005DCD11 /* VendingMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendingMachine.swift; sourceTree = "<group>"; };
 		97EC979B1C4E80860081754A /* VendingMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VendingMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97EC979E1C4E80860081754A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97EC97A01C4E80860081754A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				97EC979E1C4E80860081754A /* AppDelegate.swift */,
 				97EC97A01C4E80860081754A /* ViewController.swift */,
 				97EC97B01C4E8C7F0081754A /* VendingItemCell.swift */,
+				95D9C6D41CE6F502005DCD11 /* VendingMachine.swift */,
 				97EC97A21C4E80860081754A /* Main.storyboard */,
 				97EC97A51C4E80860081754A /* Assets.xcassets */,
 				97EC97A71C4E80860081754A /* LaunchScreen.storyboard */,
@@ -145,6 +148,7 @@
 				97EC97A11C4E80860081754A /* ViewController.swift in Sources */,
 				97EC979F1C4E80860081754A /* AppDelegate.swift in Sources */,
 				97EC97B11C4E8C7F0081754A /* VendingItemCell.swift in Sources */,
+				95D9C6D51CE6F502005DCD11 /* VendingMachine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +261,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = VendingMachine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.teamtreehouse.VendingMachine;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thepedroruiz.VendingMachine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -268,7 +272,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = VendingMachine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.teamtreehouse.VendingMachine;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thepedroruiz.VendingMachine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -292,6 +296,7 @@
 				97EC97AF1C4E80860081754A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
