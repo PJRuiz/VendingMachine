@@ -19,6 +19,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet weak var quantityLabel: UILabel!
 	
 	let vendingMachine: VendingMachineType
+	
+	var currentSelection: VendingSelection?
+	
+	var quantity: Double = 1.0
     
     required init?(coder aDecoder: NSCoder) {
 		do {
@@ -36,6 +40,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         setupCollectionViewCells()
+		  balanceLabel.text = "$\(vendingMachine.amountDeposited)"
+		
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,13 +68,22 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! VendingItemCell
+		
+		let item = vendingMachine.selection[indexPath.row]
+		cell.iconView.image = item.icon()
         
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         updateCellBackgroundColor(indexPath, selected: true)
-        
+		
+		  currentSelection = vendingMachine.selection[indexPath.row]
+		
+		if let currentSelection = currentSelection, let item = vendingMachine.itemForCurrentSelection(currentSelection) {
+			totalLabel.text = "$\(item.price)"
+		}
+		
     }
     
     func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
@@ -90,5 +105,18 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     // MARK: - Helper Methods
+	@IBAction func purchase() {
+		if let currentSelection = currentSelection {
+			do {
+				try vendingMachine.vend(currentSelection, quantity: quantity)
+				
+				balanceLabel.text = "$\(vendingMachine.amountDeposited)"
+			} catch {
+				// FIXME: Error handling code
+			}
+		} else {
+			// FIXME: Alert user to no selection
+		}
+	}
 }
 
