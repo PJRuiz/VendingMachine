@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95299CA71CF3F704003E399E /* DepositController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95299CA61CF3F704003E399E /* DepositController.swift */; };
 		95D9C6D51CE6F502005DCD11 /* VendingMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D9C6D41CE6F502005DCD11 /* VendingMachine.swift */; };
 		97EC979F1C4E80860081754A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EC979E1C4E80860081754A /* AppDelegate.swift */; };
 		97EC97A11C4E80860081754A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EC97A01C4E80860081754A /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		95299CA61CF3F704003E399E /* DepositController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepositController.swift; sourceTree = "<group>"; };
 		95D9C6D41CE6F502005DCD11 /* VendingMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendingMachine.swift; sourceTree = "<group>"; };
 		97EC979B1C4E80860081754A /* VendingMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VendingMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97EC979E1C4E80860081754A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				97EC97A01C4E80860081754A /* ViewController.swift */,
 				97EC97B01C4E8C7F0081754A /* VendingItemCell.swift */,
 				95D9C6D41CE6F502005DCD11 /* VendingMachine.swift */,
+				95299CA61CF3F704003E399E /* DepositController.swift */,
 				97EC97A21C4E80860081754A /* Main.storyboard */,
 				97EC97A51C4E80860081754A /* Assets.xcassets */,
 				97EC97A71C4E80860081754A /* LaunchScreen.storyboard */,
@@ -147,6 +150,7 @@
 			files = (
 				97EC97A11C4E80860081754A /* ViewController.swift in Sources */,
 				97EC979F1C4E80860081754A /* AppDelegate.swift in Sources */,
+				95299CA71CF3F704003E399E /* DepositController.swift in Sources */,
 				97EC97B11C4E8C7F0081754A /* VendingItemCell.swift in Sources */,
 				95D9C6D51CE6F502005DCD11 /* VendingMachine.swift in Sources */,
 			);

@@ -187,10 +187,10 @@
             </objects>
             <point key="canvasLocation" x="948" y="657"/>
         </scene>
-        <!--View Controller-->
+        <!--Deposit Controller-->
         <scene sceneID="gDP-st-Zj6">
             <objects>
-                <viewController id="lEm-gg-DlC" sceneMemberID="viewController">
+                <viewController id="lEm-gg-DlC" customClass="DepositController" customModule="VendingMachine" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ae8-pN-9lu"/>
                         <viewControllerLayoutGuide type="bottom" id="qQF-yM-vsw"/>
@@ -207,8 +207,10 @@
                                     <constraint firstAttribute="height" constant="56" id="ubE-I4-EIc"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Purchase"/>
+                                <state key="normal" title="Dismiss"/>
                                 <connections>
+                                    <action selector="dismiss" destination="lEm-gg-DlC" eventType="touchUpInside" id="SCG-WF-ZU7"/>
+                                    <action selector="dismiss:" destination="lEm-gg-DlC" eventType="touchUpInside" id="FeT-35-IpC"/>
                                     <action selector="purchase" destination="BYZ-38-t0r" eventType="touchUpInside" id="d7V-It-GHZ"/>
                                 </connections>
                             </button>
