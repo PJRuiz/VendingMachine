@@ -46,6 +46,10 @@
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <color key="tintColor" red="0.96862745100000003" green="0.80000000000000004" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Add $5"/>
+                                                <connections>
+                                                    <action selector="depositFunds" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xzn-S7-Iyf"/>
+                                                    <segue destination="lEm-gg-DlC" kind="presentation" id="j8p-dC-NJk"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -163,7 +167,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.11764705882352941" green="0.14117647058823529" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.10196078431372549" green="0.10980392156862745" blue="0.11372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="1li-0N-JWX" secondAttribute="trailing" id="7q7-lh-sRy"/>
                             <constraint firstItem="1li-0N-JWX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="AXh-87-Lqf"/>
@@ -181,7 +185,53 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1020" y="657"/>
+            <point key="canvasLocation" x="948" y="657"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gDP-st-Zj6">
+            <objects>
+                <viewController id="lEm-gg-DlC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ae8-pN-9lu"/>
+                        <viewControllerLayoutGuide type="bottom" id="qQF-yM-vsw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iA6-vo-wCT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ix4-CY-BKs">
+                                <rect key="frame" x="0.0" y="544" width="600" height="56"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="56" id="eaS-rd-Swg"/>
+                                    <constraint firstAttribute="height" constant="56" id="ubE-I4-EIc"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Purchase"/>
+                                <connections>
+                                    <action selector="purchase" destination="BYZ-38-t0r" eventType="touchUpInside" id="d7V-It-GHZ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Funds successfully added" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bh1-F2-ahk">
+                                <rect key="frame" x="201" y="289" width="199" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1019607843" green="0.10980392160000001" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="bh1-F2-ahk" firstAttribute="centerY" secondItem="iA6-vo-wCT" secondAttribute="centerY" id="BHR-g7-lJr"/>
+                            <constraint firstAttribute="trailing" secondItem="ix4-CY-BKs" secondAttribute="trailing" id="EBR-Av-mWj"/>
+                            <constraint firstItem="qQF-yM-vsw" firstAttribute="top" secondItem="ix4-CY-BKs" secondAttribute="bottom" id="Fdr-PS-7yX"/>
+                            <constraint firstItem="bh1-F2-ahk" firstAttribute="centerX" secondItem="iA6-vo-wCT" secondAttribute="centerX" id="PFH-8G-phc"/>
+                            <constraint firstItem="ix4-CY-BKs" firstAttribute="leading" secondItem="iA6-vo-wCT" secondAttribute="leading" id="lre-tf-v8O"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z5p-C8-duA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1666" y="657"/>
         </scene>
     </scenes>
     <resources>
