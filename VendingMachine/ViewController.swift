@@ -40,7 +40,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         setupCollectionViewCells()
-		  balanceLabel.text = "$\(vendingMachine.amountDeposited)"
+		  setupViews()
 		
     }
 
@@ -48,6 +48,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+	
+	func setupViews() {
+		updateQuantityLabel()
+		updateBalanceLabel()
+	}
     
     // MARK: - UICollectionView 
 
@@ -77,13 +82,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         updateCellBackgroundColor(indexPath, selected: true)
-		
+		  reset()
 		  currentSelection = vendingMachine.selection[indexPath.row]
-		
-		if let currentSelection = currentSelection, let item = vendingMachine.itemForCurrentSelection(currentSelection) {
-			totalLabel.text = "$\(item.price)"
-		}
-		
+		  updateTotalPriceLabel()
     }
     
     func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
@@ -109,14 +110,59 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 		if let currentSelection = currentSelection {
 			do {
 				try vendingMachine.vend(currentSelection, quantity: quantity)
-				
-				balanceLabel.text = "$\(vendingMachine.amountDeposited)"
-			} catch {
-				// FIXME: Error handling code
+				updateBalanceLabel()
+			} catch VendingMachineError.OutOfStock {
+				showAlert("Out of Stock")
+			} catch VendingMachineError.InvalidSelection {
+				showAlert("Invalid Selection")
+			} catch VendingMachineError.InsufficientFunds(let amount){
+				showAlert("Insufficient Funds", message: "Additional $\(amount) needed to complete the transaction")
+			} catch let error {
+				fatalError("\(error)")
 			}
 		} else {
-			// FIXME: Alert user to no selection
+			showAlert("No Selection Made")
 		}
 	}
+	
+	@IBAction func updateQuantity(sender: UIStepper) {
+		quantity = sender.value
+		updateTotalPriceLabel()
+		updateQuantityLabel()
+	}
+	
+	func updateTotalPriceLabel() {
+		if let currentSelection = currentSelection, let item = vendingMachine.itemForCurrentSelection(currentSelection) {
+			totalLabel.text = "$\(item.price * quantity)"
+		}
+
+	}
+	
+	func updateQuantityLabel() {
+		quantityLabel.text = "\(quantity)"
+	}
+	
+	func updateBalanceLabel() {
+		balanceLabel.text = "$\(vendingMachine.amountDeposited)"
+	}
+	
+	func reset() {
+		quantity = 1
+		updateTotalPriceLabel()
+		updateQuantityLabel()
+	}
+	
+	//MARK: - Alert
+	func showAlert(title: String, message: String? = nil, style: UIAlertControllerStyle = .Alert) {
+		let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
+		let okAction = UIAlertAction(title: "Ok", style: .Default, handler: dismissAlert)
+		alertController.addAction(okAction)
+		presentViewController(alertController, animated: true, completion: nil)
+	}
+	
+	func dismissAlert(sender: UIAlertAction) {
+		reset()
+	}
+	
 }
 
